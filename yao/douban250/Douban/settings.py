@@ -1,4 +1,4 @@
-# Scrapy settings for elong project
+# Scrapy settings for Douban project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,13 +7,13 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'elong'
+BOT_NAME = 'Douban'
 
-SPIDER_MODULES = ['elong.spiders']
-NEWSPIDER_MODULE = 'elong.spiders'
+SPIDER_MODULES = ['Douban.spiders']
+NEWSPIDER_MODULE = 'Douban.spiders'
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-# USER_AGENT = 'elong (+http://www.yourdomain.com)'
+# USER_AGENT = 'Douban (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -37,6 +37,7 @@ ROBOTSTXT_OBEY = False
 
 # Override the default request headers:
 DEFAULT_REQUEST_HEADERS = {
+    'User-Agent': 'Mozilla/5.0',
     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
     'Accept-Language': 'en',
 }
@@ -44,13 +45,13 @@ DEFAULT_REQUEST_HEADERS = {
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 # SPIDER_MIDDLEWARES = {
-#    'elong.middlewares.ElongSpiderMiddleware': 543,
+#    'Douban.middlewares.DoubanSpiderMiddleware': 543,
 # }
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 # DOWNLOADER_MIDDLEWARES = {
-#    'elong.middlewares.ElongDownloaderMiddleware': 543,
+#    'Douban.middlewares.DoubanDownloaderMiddleware': 543,
 # }
 
 # Enable or disable extensions
@@ -62,9 +63,10 @@ DEFAULT_REQUEST_HEADERS = {
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 'elong.pipelines.ElongPipeline': 300,
-    'elong.pipelines.ElongPipeline_mysql': 400,
-    # 'elong.pipelines.ElongPipeline_json': 300,
+    'Douban.pipelines.DoubanPipeline': 300,
+    # 'Douban.pipelines.DoubanPipeline_csv': 350,
+    # 'Douban.pipelines.DoubanPipeline_mysql': 300,
+
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
